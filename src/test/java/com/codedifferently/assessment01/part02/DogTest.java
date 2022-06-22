@@ -8,7 +8,7 @@ public class DogTest {
     public void nullaryConstructorTest() {
         // Given
         PetOwner expectedOwner = null;
-        String expectedName = "Dog name";
+        String expectedName = "DogName";
         Integer expectedAge = 0;
         Dog dog = new Dog();
 
@@ -45,7 +45,7 @@ public class DogTest {
     @Test
     public void constructorWithAgeTest() {
         // Given
-        String expectedName = "Dog name";
+        String expectedName = "DogName";
         Integer expectedAge = Integer.MAX_VALUE;
         Dog dog = new Dog(expectedAge);
 
@@ -80,7 +80,7 @@ public class DogTest {
     public void speakTest() {
         // Given
         Dog dog = new Dog();
-        String expected = "Bark";
+        String expected = "bark";
 
         // When
         String actual = dog.speak();
