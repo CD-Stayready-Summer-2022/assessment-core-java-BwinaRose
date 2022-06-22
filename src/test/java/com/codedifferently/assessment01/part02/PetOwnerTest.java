@@ -1,12 +1,15 @@
 package com.codedifferently.assessment01.part02;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class PetOwnerTest {
+
     @Test
     public void constructorTest() {
         // Given
@@ -41,7 +44,7 @@ public class PetOwnerTest {
     public void addPetTest2() {
         // Given
         Pet newPet = new Dog();
-        PetOwner po = new PetOwner("", null);
+        PetOwner po = new PetOwner("", newPet);
 
         // When
         po.addPet(newPet);
@@ -92,7 +95,7 @@ public class PetOwnerTest {
         PetOwner po = new PetOwner("", oneYearOldPuppy, twoYearOldKitten);
 
         // When
-        int actual = po.getYoungetPetAge();
+        int actual = po.getYoungestPetAge();
 
         // Then
         Assertions.assertEquals(expected, actual);
