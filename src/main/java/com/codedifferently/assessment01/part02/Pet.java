@@ -1,17 +1,17 @@
 package com.codedifferently.assessment01.part02;
 
 public abstract class Pet implements Animal {
-    protected String name;
-    protected int age;
-    protected PetOwner owner;
-
+    private String name;
+    protected Integer age;
+    private PetOwner owner;
 
     /**
      * nullary constructor
      * by default, pet has age of 0; name of "";
      */
     public Pet() {
-        this("",0);
+        this.name = "";
+        this.age = 0;
     }
 
     /**
@@ -19,6 +19,7 @@ public abstract class Pet implements Animal {
      */
     public Pet(String name) {
         this.name = name;
+        this.age = 0;
     }
 
 
@@ -31,7 +32,7 @@ public abstract class Pet implements Animal {
 
     /**
      * @param name name of this pet
-     * @param age age of this pet
+     * @param age  age of this pet
      */
     public Pet(String name, int age) {
         this.name = name;
@@ -54,12 +55,10 @@ public abstract class Pet implements Animal {
 
     /**
      * @param newPetOwner the new owner of this pet
-     * ensure this instance of `Pet` is added to the owner's composite `pets` list
-     * @return
+     *                    ensure this instance of `Pet` is added to the owner's composite `pets` list
      */
-    public PetOwner setOwner(PetOwner newPetOwner) {
-        newPetOwner.addPet(this);
-        return this.owner = newPetOwner;
+    public void setOwner(PetOwner newPetOwner) {
+        this.owner = newPetOwner;
     }
 
     /**

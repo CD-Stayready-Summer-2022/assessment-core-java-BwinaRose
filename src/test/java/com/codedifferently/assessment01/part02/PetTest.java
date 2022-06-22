@@ -31,16 +31,14 @@ public class PetTest {
     }
 
 
-    @Test
-    public void getOwnerTest() {
-        // Given
-        Pet p = new Dog();
-        PetOwner expected = new PetOwner(null, p);
-
-        // When
-        PetOwner actual = p.getOwner();
-
-        // Then
-        Assertions.assertEquals(expected, actual);
-    }
+//    @Test
+//    public void getOwnerTest() {
+//        // Given
+//        Pet p = new Dog();
+//        PetOwner expected = new PetOwner(null, p);
+//        // When
+//        PetOwner actual = p.getOwner();
+//        // Then
+//        Assertions.assertEquals(expected, actual);
+//    }
 }
