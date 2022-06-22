@@ -1,5 +1,7 @@
 package com.codedifferently.assessment01.part01;
 
+import java.util.Locale;
+
 public class StringUtils {
     /**
      * Get all the words in the sentence and return it in a string array
@@ -7,7 +9,8 @@ public class StringUtils {
      * @return
      */
     public static String[] getWords(String sentence){
-        return null;
+        String[] splitStr = sentence.split("\\s+");
+        return splitStr;
     }
 
     /**
@@ -16,7 +19,8 @@ public class StringUtils {
      * @return
      */
     public static String getFirstWord(String sentence){
-        return null;
+        String[] words = StringUtils.getWords(sentence);
+        return words[0];
     }
 
     /**
@@ -25,7 +29,9 @@ public class StringUtils {
      * @return
      */
     public static String reverseFirstWord(String sentence){
-        return null;
+        String firstWord = StringUtils.getFirstWord(sentence);
+        String revFirstWord = BasicStringUtils.reverse(firstWord);
+        return revFirstWord;
     }
 
     /**
@@ -33,7 +39,9 @@ public class StringUtils {
      * @param sentence
      * @return
      */
-    public static String reverseFirstWordThenCamelCase(String sentence){return null;}
+    public static String reverseFirstWordThenCamelCase(String sentence){
+        String revFirstWordAndLowerCase = StringUtils.reverseFirstWord(sentence).toLowerCase();
+        return BasicStringUtils.camelCase(revFirstWordAndLowerCase);}
 
     /**
      * Remove Character at index
@@ -41,5 +49,8 @@ public class StringUtils {
      * @param index
      * @return
      */
-    public static String removeCharacterAtIndex(String str, int index){return null;}
+    public static String removeCharacterAtIndex(String str, int index){
+        StringBuilder builderStr = new StringBuilder(str);
+        return builderStr.deleteCharAt(index).toString();
+    }
 }
